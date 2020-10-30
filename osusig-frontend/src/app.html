@@ -1,0 +1,28 @@
+<template>
+  <div class="jumbotron mx-auto m-4" style="max-width: 40rem; background: #ac396d">
+    <h1 class="display-3"><img src="../static/icon.svg" style="filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))"></h1>
+    <p class="lead">is a signature generator for osu!</p>
+    <hr class="my-4">
+    <p>The backend is developed in Rust for its blazing fast speed and safety while this frontend is developed with Aurelia + Typescript.</p>
+  </div>
+  <div class="card mb-3 mx-auto" style="max-width: 40rem; background: #ac396d">
+    <div class="card-header text-white">osu!sig settings</div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="name">osu! name</label>
+        <input class="form-control" id="name" value.bind="name & debounce:850">
+      </div>
+      <div class="form-group">
+        <label for="color" class="text-white">osu!sig color</label>
+        <input class="form-control text-white" id="color" type="color" value.bind="color & debounce:450">
+      </div>
+      <div class="form-group">
+        <fieldset disabled="">
+          <label class="control-label text-white" for="link">osu!sig link</label>
+          <input class="form-control" id="link" type="text" disabled="" value.bind="url">
+          <img class="img-fluid mt-3" src.bind="url" style="border-radius: 4px">
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</template>
